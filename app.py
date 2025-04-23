@@ -80,7 +80,7 @@ llm_gemini = VertexAI(
 )
 
 conversational_retrieval = ConversationalRetrievalChain.from_llm(
-    llm=llm_openai, retriever=retriever, memory=memory, verbose=False
+    llm=llm_gemini, retriever=retriever, memory=memory, verbose=False
 )
 
 # Streamlit app
