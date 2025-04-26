@@ -1,7 +1,8 @@
 streamlit
 google-cloud-storage
-langchain==0.1.14
-chromadb==0.4.24
-langchain_google_vertexai==0.1.2
+langchain
+chromadb
+langchain_google_vertexai
 langchain-google-community
+langchain-community
 openai
