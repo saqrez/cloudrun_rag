@@ -10,8 +10,8 @@ import os
 
 # GCS bucket details
 BUCKET_NAME = "rag_cloudrun"
-GCS_PERSIST_PATH = "chroma/"
-LOCAL_PERSIST_PATH = "./local_chromadb/"
+GCS_PERSIST_PATH = "chroma_multi/"
+LOCAL_PERSIST_PATH = "./local_chromadb_multi/"
 
 # Initialize GCS client
 storage_client = storage.Client()
@@ -50,7 +50,7 @@ retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True, output_key='answer')
 
 template = """
-    You are a helpful AI assistant. You're tasked to answer the question given below, but only based on the context provided.
+    You are a helpful AI assistant.You are a Science teacher in a secondary school. You're tasked to answer the question given below, but only based on the context provided.
     context:
 
     {context}
@@ -74,8 +74,8 @@ llm_gemini = VertexAI(
     model="gemini-1.5-pro",
     max_output_tokens=2048,
     temperature=0.1,
-    top_p=0.8,
-    top_k=40,
+    top_p=0.7,
+    top_k=15,
     verbose=True,
 )
 
