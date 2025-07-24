@@ -86,7 +86,35 @@ conversational_retrieval = ConversationalRetrievalChain.from_llm(
 # Streamlit app
 st.set_page_config(page_title="Conversational AI Chatbot", layout="centered")
 
-st.title("AI Assistant Chatbot")
+st.title("Science Teacher")
+
+html_string = "<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  location="us-central1"
+  project-id="agentic-sr"
+  agent-id="30d86bc9-ea4b-4035-9271-30637ab051bc"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+    chat-title="SMART-OBJ-CF">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>"
+st.markdown(html_string, unsafe_allow_html=True)
+
 
 # Initialize session state to store chat history
 if "messages" not in st.session_state:
