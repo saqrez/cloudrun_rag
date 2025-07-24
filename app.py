@@ -100,9 +100,9 @@ components.html(
   agent-id="30d86bc9-ea4b-4035-9271-30637ab051bc"
   language-code="en"
   max-query-length="-1">
-  <df-messenger-chat-bubble
+  <df-messenger-chat
     chat-title="SMART-OBJ-CF">
-  </df-messenger-chat-bubble>
+  </df-messenger-chat>
 </df-messenger>
 <style>
   df-messenger {
@@ -113,12 +113,14 @@ components.html(
     --df-messenger-chat-background: #f3f6fc;
     --df-messenger-message-user-background: #d3e3fd;
     --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 350px;
   }
 </style>
     """,
-    height=150,  # Adjust height as needed
+  #  height=450,  # Adjust height as needed
 )
 
 
