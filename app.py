@@ -88,7 +88,11 @@ st.set_page_config(page_title="Conversational AI Chatbot", layout="centered")
 
 st.title("Science Teacher")
 
-html_string = "<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+import streamlit.components.v1 as components
+
+components.html(
+    """
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 <df-messenger
   location="us-central1"
@@ -112,8 +116,11 @@ html_string = "<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-c
     bottom: 16px;
     right: 16px;
   }
-</style>"
-st.markdown(html_string, unsafe_allow_html=True)
+</style>
+    """,
+    height=150,  # Adjust height as needed
+)
+
 
 
 # Initialize session state to store chat history
